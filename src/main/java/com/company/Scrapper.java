@@ -17,6 +17,13 @@ public class Scrapper {
     static ArrayList<Project> projects = new ArrayList<>();
     static int size;
 
+    /**
+     * saves top trending projects into projects.
+     * @param html html of trending page
+     * @param number number of projects to save in the list
+     * @author Anbang
+     */
+
     public static void getTrendingProjects(String html, int number){
 
         try{
@@ -62,7 +69,11 @@ public class Scrapper {
         }
     }
 
-
+    /**
+     * writes details of projects into a CSV file.
+     * @throws IOException\
+     * @author Anbang
+     */
 
 
     public static void writeToCSVFile() throws IOException{
@@ -89,6 +100,16 @@ public class Scrapper {
 
     }
 
+
+    /**
+     * Get projects into one list and then write details into CSV file
+     * @param spokenLanguage code of spoken language
+     * @param language programming language mainly used
+     * @param dateRange time period of trending project
+     * @param number number of trending project wanted
+     * @author Anbang
+     */
+
     public static void getProjects (String spokenLanguage, String language, String dateRange, int number) {
         try {
             String html = trendingHTML + "/" + language + "?since=" + dateRange + "&spoken_language_code=" + spokenLanguage;
@@ -97,10 +118,13 @@ public class Scrapper {
         }catch (IOException e){
             e.printStackTrace();
         }
-
-
-
     }
+
+    /**
+     *
+     * @return projects
+     * @author Anbang
+     */
 
     public static ArrayList<Project> getList(){
         return projects;

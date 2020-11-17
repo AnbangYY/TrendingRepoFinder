@@ -4,12 +4,29 @@ import java.util.ArrayList;
 
 public class Project {
 
+
+    /**
+     * Class Project
+     * @author Anbang
+     */
+
+
     String organization;
     String name;
     int starGazer;
     int forks;
     ArrayList<String> mainContributors;
 
+
+    /**
+     * Constructor
+     * @param organization
+     * @param name
+     * @param starGazer
+     * @param forks
+     * @param mainContributors
+     * @author Anbang
+     */
 
     public Project(String organization, String name, int starGazer, int forks, ArrayList<String> mainContributors) {
         this.organization = organization;
